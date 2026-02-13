@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.1 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.15 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.75 0.25 340;
+        --primary-foreground: 1 0 0;
+        --secondary: 0.85 0.15 350;
+        --secondary-foreground: 0.2 0 0;
+        --muted: 0.3 0.05 340;
+        --muted-foreground: 0.7 0.1 340;
+        --accent: 0.8 0.2 340;
+        --accent-foreground: 1 0 0;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.4 0.1 340;
+        --input: 0.4 0.1 340;
+        --ring: 0.75 0.25 340;
+        --chart-1: 0.75 0.25 340;
+        --chart-2: 0.85 0.15 350;
+        --chart-3: 0.7 0.2 330;
+        --chart-4: 0.8 0.18 345;
+        --chart-5: 0.9 0.12 355;
+        --sidebar: 0.15 0 0;
+        --sidebar-foreground: 0.985 0 0;
+        --sidebar-primary: 0.75 0.25 340;
+        --sidebar-primary-foreground: 1 0 0;
+        --sidebar-accent: 0.3 0.05 340;
+        --sidebar-accent-foreground: 0.985 0 0;
+        --sidebar-border: 0.4 0.1 340;
+        --sidebar-ring: 0.75 0.25 340;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+}
+
+@layer components {
+    .neon-text {
+        color: oklch(0.9 0.25 340);
+        text-shadow: 
+            0 0 10px oklch(0.9 0.25 340 / 0.8),
+            0 0 20px oklch(0.9 0.25 340 / 0.6),
+            0 0 30px oklch(0.9 0.25 340 / 0.4),
+            0 0 40px oklch(0.9 0.25 340 / 0.2);
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .neon-text-secondary {
+        color: oklch(0.95 0.15 350);
+        text-shadow: 
+            0 0 10px oklch(0.95 0.15 350 / 0.8),
+            0 0 20px oklch(0.95 0.15 350 / 0.6),
+            0 0 30px oklch(0.95 0.15 350 / 0.4);
+    }
+
+    .neon-button {
+        background: linear-gradient(135deg, oklch(0.75 0.25 340) 0%, oklch(0.65 0.28 335) 100%);
+        color: white;
+        border: 2px solid oklch(0.9 0.25 340);
+        box-shadow: 
+            0 0 20px oklch(0.75 0.25 340 / 0.6),
+            0 0 40px oklch(0.75 0.25 340 / 0.4),
+            inset 0 0 20px oklch(0.9 0.25 340 / 0.3);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+    }
+
+    .neon-button:hover {
+        box-shadow: 
+            0 0 30px oklch(0.75 0.25 340 / 0.8),
+            0 0 60px oklch(0.75 0.25 340 / 0.6),
+            inset 0 0 30px oklch(0.9 0.25 340 / 0.4);
+    }
+
+    .neon-button-secondary {
+        background: linear-gradient(135deg, oklch(0.4 0.15 340) 0%, oklch(0.3 0.18 335) 100%);
+        color: oklch(0.9 0.2 340);
+        border: 2px solid oklch(0.6 0.2 340);
+        box-shadow: 
+            0 0 15px oklch(0.6 0.2 340 / 0.4),
+            0 0 30px oklch(0.6 0.2 340 / 0.2),
+            inset 0 0 15px oklch(0.6 0.2 340 / 0.2);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+    }
+
+    .neon-button-secondary:hover {
+        box-shadow: 
+            0 0 20px oklch(0.6 0.2 340 / 0.6),
+            0 0 40px oklch(0.6 0.2 340 / 0.4),
+            inset 0 0 20px oklch(0.6 0.2 340 / 0.3);
+    }
+}
+
+@layer utilities {
+    @keyframes pulse-glow {
+        0%, 100% {
+            text-shadow: 
+                0 0 10px oklch(0.9 0.25 340 / 0.8),
+                0 0 20px oklch(0.9 0.25 340 / 0.6),
+                0 0 30px oklch(0.9 0.25 340 / 0.4),
+                0 0 40px oklch(0.9 0.25 340 / 0.2);
+        }
+        50% {
+            text-shadow: 
+                0 0 15px oklch(0.9 0.25 340 / 1),
+                0 0 30px oklch(0.9 0.25 340 / 0.8),
+                0 0 45px oklch(0.9 0.25 340 / 0.6),
+                0 0 60px oklch(0.9 0.25 340 / 0.4);
+        }
+    }
+}

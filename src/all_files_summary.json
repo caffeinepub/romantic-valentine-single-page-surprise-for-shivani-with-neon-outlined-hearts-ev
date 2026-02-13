@@ -1,0 +1,17 @@
+{
+  "backend/main.mo": "Empty actor canister with no methods.",
+  "feature_evidence.json": "Feature evidence report mapping features to frontend files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries for key frontend files describing app flow, neon effects, and evasive logic.",
+  "frontend/index.css": "Tailwind base setup and CSS variables for pink/white theme with global background and text styling.",
+  "frontend/index.html": "HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Main React component rendering the Valentine prompt, evasive button behavior, and success state.",
+  "frontend/src/components/NeonHeartsBackground.tsx": "Canvas component drawing floating neon hearts with pointer‑interactive repulsion and glow.",
+  "frontend/src/components/SuccessMeme.tsx": "Displays a meme image and caption for the success state.",
+  "frontend/src/hooks/useActor.ts": "Hook creating and refreshing backend actors based on Internet Identity state.",
+  "frontend/src/hooks/useEvasiveButton.ts": "Hook computing random safe positions for the evasive button while avoiding the center and yess button zone.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity auth provider and hook handling login, stored identities, and status tracking.",
+  "frontend/src/index.css": "Tailwind base setup defining OKLCH theme variables and custom neon text/button styles with glow animations.",
+  "frontend/src/main.tsx": "React entry point that initializes React Query, wraps the app with Internet Identity, and mounts the app.",
+  "frontend/tailwind.config.js": "Tailwind config extending colors, radius, shadows, fonts, and animations using CSS variables and plugins.",
+  "project_state.json": "Project metadata describing a Valentine-themed interactive webpage, its features, requirements, and architectural notes."
+}

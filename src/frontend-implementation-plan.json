@@ -1,0 +1,120 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine single-page neon hearts surprise (iPad Chrome compatible)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Render a single-page Valentine prompt for Shivani with exactly two choices labeled \"yess\" and \"i dont like you\".",
+      "acceptanceCriteria": [
+        "The initial screen shows the name \"Shivani,\" and the question \"Will you be my Valentine?\"",
+        "Exactly two interactive buttons are visible: \"yess\" and \"i dont like you\"",
+        "The page remains a single-screen/single-purpose flow (no extra navigation or features)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the prompt text matches exactly (including the intended line break between \"Shivani,\" and \"Will you be my Valentine?\") and ensure the two visible button labels are exactly \"yess\" and \"i dont like you\" (remove any extra emoji/words), keeping the experience as a single-screen flow without adding navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Provide a smooth full-viewport animated neon pink/white outlined (hollow) hearts background that floats upward continuously behind the content.",
+      "acceptanceCriteria": [
+        "The heart shapes are visually hollow/outlined (stroke-based), not solid-filled",
+        "Hearts continuously spawn/loop from bottom-to-top and cover the full viewport behind the content",
+        "The color scheme uses pink/white neon styling with a visible glow effect",
+        "Animation runs smoothly on iPad Chrome at typical screen sizes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NeonHeartsBackground.tsx",
+          "operation": "modify",
+          "description": "Update the canvas renderer to draw hollow/outlined heart shapes (stroke-based) with a pink/white neon glow effect; increase/scale heart spawning to cover the full viewport and loop bottom-to-top continuously; optimize the animation loop for smooth iPad Chrome performance (e.g., reuse objects, minimize per-frame allocations)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add pointer/touch interactivity so nearby hearts react to user input while continuing to float upward.",
+      "acceptanceCriteria": [
+        "Moving the pointer on desktop causes a visible local effect on nearby hearts",
+        "Touching/dragging on iPad causes a similar visible local effect on nearby hearts",
+        "Interactivity does not break the continuous upward floating behavior"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NeonHeartsBackground.tsx",
+          "operation": "modify",
+          "description": "Add unified pointer/touch tracking (mouse move + touch/drag via pointer events) and apply a gentle local effect on nearby hearts (e.g., repulsion/drift and/or glow/intensity change) while preserving the continuous upward floating motion."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Make the \"i dont like you\" button reliably evade hover and attempted tap/press by moving within the viewport and away from the main \"yess\" area.",
+      "acceptanceCriteria": [
+        "On desktop: moving the cursor onto the \"i dont like you\" button causes it to relocate before it can be clicked",
+        "On iPad/touch: attempting to press/tap the \"i dont like you\" button triggers relocation instead of activation",
+        "The relocated position remains fully within the viewport bounds (not off-screen)",
+        "The evasive behavior remains reliable across repeated attempts"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useEvasiveButton.ts",
+          "operation": "modify",
+          "description": "Enhance the evasive positioning logic to guarantee the button stays fully within the viewport and avoids overlapping a provided \"safe zone\" rectangle (the \"yess\" button area, with padding), while remaining reliable across repeated attempts."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the evasive behavior so \"i dont like you\" relocates on desktop hover and touch/press attempts using pointer-safe handlers, and pass the measured \"yess\" button area as the avoidance/safe-zone for the evasive positioning logic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "On clicking \"yess\", transition to a celebratory success state showing a meme image and the exact text \"Hehehe Good gurl 😚💗\" with consistent neon theme.",
+      "acceptanceCriteria": [
+        "Clicking \"yess\" switches the UI into a success/reveal screen",
+        "The success screen shows the meme image and renders the exact text \"Hehehe Good gurl 😚💗\"",
+        "The romantic neon theme remains consistent on the success screen"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Keep the single-page state transition on \"yess\" click and ensure the success/reveal state is the only post-click UI shown (no extra navigation), preserving the same background/theme."
+        },
+        {
+          "path": "frontend/src/components/SuccessMeme.tsx",
+          "operation": "modify",
+          "description": "Verify the success view renders the exact required text \"Hehehe Good gurl 😚💗\" and maintains the neon romantic styling while displaying the meme image prominently."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Include the required generated static meme image in the public generated assets folder and render it directly from the frontend.",
+      "acceptanceCriteria": [
+        "A static asset exists at `frontend/public/assets/generated/valentine-meme.dim_1200x800.png`",
+        "The success screen loads the image via a direct static path (e.g., `/assets/generated/...`)",
+        "The app works when opened in iPad Chrome without requiring any backend calls for the image"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/valentine-meme.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated static meme image asset at the exact path `frontend/public/assets/generated/valentine-meme.dim_1200x800.png` for direct frontend loading."
+        },
+        {
+          "path": "frontend/src/components/SuccessMeme.tsx",
+          "operation": "modify",
+          "description": "Ensure the meme is referenced via a direct static public path that resolves to `frontend/public/assets/generated/valentine-meme.dim_1200x800.png` (no backend calls)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,2 +1,3 @@
-# romantic-valentine-single-page-surprise-for-shivani-with-neon-outlined-hearts-ev
-Exported from Caffeine project: Romantic Valentine single-page surprise for Shivani with neon outlined hearts, evasive 'no' button, and meme reveal
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
