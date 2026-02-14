@@ -23,7 +23,7 @@ export default function App() {
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
         <div className="text-center">
           <h1 className="neon-text mb-8 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-            Shivani,
+            Hridya,
           </h1>
           <h2 className="neon-text-secondary mb-12 text-3xl font-semibold sm:text-4xl md:text-5xl">
             Will you be my Valentine? 💕

@@ -1,38 +1,39 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T00:04:42.526Z",
+  "generatedAt": "2026-02-14T00:44:52.201Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 6,
-    "implemented": 1,
+    "total": 7,
+    "implemented": 5,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Create a single-page romantic experience that asks: \"Shivani,\\nWill you be my Valentine?\" and presents exactly two choices labeled \"yess\" and \"i dont like you\".",
+        "summary": "Update the Valentine prompt copy to address the girlfriend by name and keep the experience single-purpose: show exactly the heading text \"Hridya,\" and the question \"Will you be my Valentine? 💕\" above exactly two choices labeled \"yess\" and \"i dont like you\".",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Implement/keep a full-viewport animated \"live wallpaper\" background of many small neon hollow outlined hearts that float upward continuously from bottom to top using a pink-and-white neon heart color scheme.",
         "status": "missing",
         "plannedFiles": [
-          "frontend/src/App.tsx",
+          "frontend/src/components/NeonHeartsBackground.tsx",
           "frontend/src/index.css"
         ],
         "matchedFiles": []
       },
       {
-        "id": "REQ-2",
-        "summary": "Implement a live animated full-viewport background of many small neon hollow outlined hearts that continuously float upward from the bottom of the viewport to the top, using a pink-and-white neon palette.",
-        "status": "missing",
-        "plannedFiles": [
-          "frontend/src/components/NeonHeartsBackground.tsx",
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": []
-      },
-      {
         "id": "REQ-3",
-        "summary": "Make the animated hearts background interactive so user input (mouse move on desktop and touch on iPad) visibly affects nearby hearts (e.g., gentle repulsion/drift/glow change) while keeping the upward floating motion.",
+        "summary": "Make the hearts background interactive so pointer movement and touch input visibly affects nearby hearts (e.g., repulsion/drift and/or glow intensity changes), while maintaining the upward floating motion.",
         "status": "missing",
         "plannedFiles": [
           "frontend/src/components/NeonHeartsBackground.tsx"
@@ -41,27 +42,31 @@
       },
       {
         "id": "REQ-4",
-        "summary": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (desktop) and on attempted tap/press (touch devices), it moves to a new on-screen position that stays within the viewport and avoids overlapping the main \"yess\" area.",
-        "status": "missing",
+        "summary": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (mouse enter) and on attempted tap/press (pointer down / touch start), it moves to a new on-screen position within the viewport and avoids overlapping the \"yess\" button area.",
+        "status": "implemented",
         "plannedFiles": [
           "frontend/src/hooks/useEvasiveButton.ts",
           "frontend/src/App.tsx"
         ],
-        "matchedFiles": []
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
       },
       {
         "id": "REQ-5",
-        "summary": "When the user clicks \"yess\", transition to a celebratory success state that displays a meme image and the exact text: \"Hehehe Good gurl 😚💗\".",
-        "status": "missing",
+        "summary": "When the user clicks \"yess\", transition to a success view that shows a meme image and displays the exact caption text: \"Hehehe Good gurl 😚💗\".",
+        "status": "implemented",
         "plannedFiles": [
           "frontend/src/App.tsx",
           "frontend/src/components/SuccessMeme.tsx"
         ],
-        "matchedFiles": []
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
       },
       {
         "id": "REQ-6",
-        "summary": "Add the required generated static meme image under `frontend/public/assets/generated` and render it directly from the frontend (no backend fetch).",
+        "summary": "Provide the required static meme image asset at `frontend/public/assets/generated/valentine-meme.dim_1200x800.png` and ensure the success view renders it directly via a static `/assets/generated/...` path.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/public/assets/generated/valentine-meme.dim_1200x800.png",
@@ -70,14 +75,28 @@
         "matchedFiles": [
           "frontend/public/assets/generated/valentine-meme.dim_1200x800.png"
         ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Update the document/page metadata for the Valentine page so it reflects Hridya (e.g., the HTML `<title>` should mention Hridya rather than any other name).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
+        ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
     "feature_evidence.json",
+    "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/index.html",
     "frontend/public/assets/generated/valentine-meme.dim_1200x800.png",
+    "frontend/src/App.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

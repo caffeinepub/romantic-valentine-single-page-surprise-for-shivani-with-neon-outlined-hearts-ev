@@ -1,34 +1,35 @@
 {
   "kind": "build_request",
-  "title": "Romantic Valentine single-page surprise for Shivani with neon hearts background, evasive “no” button, and meme reveal",
+  "title": "Romantic Valentine single-page surprise for Hridya with interactive neon hearts and evasive 'no' button",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Create a single-page romantic experience that asks: \"Shivani,\\nWill you be my Valentine?\" and presents exactly two choices labeled \"yess\" and \"i dont like you\".",
+      "text": "Update the Valentine prompt copy to address the girlfriend by name and keep the experience single-purpose: show exactly the heading text \"Hridya,\" and the question \"Will you be my Valentine? 💕\" above exactly two choices labeled \"yess\" and \"i dont like you\".",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2"
         ],
         "quotes": [
-          "Create an interactive web page as a surprise for my girlfriend... to ask her to be my valentine, her name is Shivani.",
+          "The page should be simple, romantic-themed, and have only one purpose: to ask her to be my valentine, her name is hridya.",
           "There should be two options: yess or i dont like you ."
         ]
       },
       "acceptanceCriteria": [
-        "The main prompt includes the name \"Shivani\" and asks \"Will you be my Valentine?\".",
-        "There are exactly two visible options labeled exactly \"yess\" and \"i dont like you\" (matching casing/spelling).",
-        "The page is usable on iPad Chrome with responsive layout (no horizontal overflow)."
+        "On initial load, the page displays the name \"Hridya,\" prominently.",
+        "The page displays the question text \"Will you be my Valentine? 💕\".",
+        "Exactly two buttons are present with labels exactly \"yess\" and \"i dont like you\" (matching casing/spaces).",
+        "No other primary flows/pages/actions are introduced beyond asking and showing the success state."
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Implement a live animated full-viewport background of many small neon hollow outlined hearts that continuously float upward from the bottom of the viewport to the top, using a pink-and-white neon palette.",
+      "text": "Implement/keep a full-viewport animated \"live wallpaper\" background of many small neon hollow outlined hearts that float upward continuously from bottom to top using a pink-and-white neon heart color scheme.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2"
         ],
         "quotes": [
           "The background of the pages should be a live wallpaper of small neon hollow highlighted outlined hearts floating from the bottom of the page to up.",
@@ -36,98 +37,128 @@
         ]
       },
       "acceptanceCriteria": [
-        "The background covers the full viewport behind all content.",
-        "At least dozens of small outlined (hollow) hearts animate upward continuously and loop seamlessly.",
-        "The color palette is predominantly neon pink and white on a dark romantic background so the outlines glow clearly."
+        "A full-viewport background animation is visible behind the UI content.",
+        "Hearts are hollow/outlined with neon glow styling and use pink and white tones.",
+        "Hearts continuously move upward and recycle from bottom when leaving the top of the viewport.",
+        "The background remains performant and visually stable on iPad Chrome (no obvious stutter/freezing during normal interaction)."
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Make the animated hearts background interactive so user input (mouse move on desktop and touch on iPad) visibly affects nearby hearts (e.g., gentle repulsion/drift/glow change) while keeping the upward floating motion.",
+      "text": "Make the hearts background interactive so pointer movement and touch input visibly affects nearby hearts (e.g., repulsion/drift and/or glow intensity changes), while maintaining the upward floating motion.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2"
         ],
         "quotes": [
           "and the hearts should float upwards be fully interactive using HTML, CSS, and JavaScript so that I can easily run it on my iPad using Chrome."
         ]
       },
       "acceptanceCriteria": [
-        "Pointer movement (mouse/pointer) influences hearts near the pointer in a noticeable way (e.g., repulsion and/or glow intensity increase).",
-        "Touch interaction on iPad produces the same visible effect as pointer movement.",
-        "Hearts continue to drift upward even while being interacted with."
+        "On desktop, moving the cursor near hearts causes a visible interaction effect (e.g., repulsion and increased glow).",
+        "On touch devices (iPad Chrome), touch/pointer interactions also trigger the same visible interaction effect.",
+        "Interactivity does not stop the hearts’ upward motion; it only modulates position/glow briefly."
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (desktop) and on attempted tap/press (touch devices), it moves to a new on-screen position that stays within the viewport and avoids overlapping the main \"yess\" area.",
+      "text": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (mouse enter) and on attempted tap/press (pointer down / touch start), it moves to a new on-screen position within the viewport and avoids overlapping the \"yess\" button area.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2"
         ],
         "quotes": [
           "When she hovers her cursor over Nope, it should move away so she cannot click it, forcing her to click only on yess."
         ]
       },
       "acceptanceCriteria": [
-        "Hovering over the \"i dont like you\" button makes it move away before a click can occur.",
-        "Attempting to tap/press the \"i dont like you\" button on touch devices also moves it away.",
-        "The \"i dont like you\" button never moves off-screen and does not overlap the \"yess\" button area when it relocates.",
-        "The \"yess\" button remains reliably clickable."
+        "Hovering over the \"i dont like you\" button causes it to move away before it can be clicked.",
+        "On touch devices, attempting to press/tap the \"i dont like you\" button causes it to move away.",
+        "The evasive button always stays fully within the viewport (not clipped off-screen).",
+        "The evasive button does not overlap the \"yess\" button region when it relocates."
       ]
     },
     {
       "id": "REQ-5",
-      "text": "When the user clicks \"yess\", transition to a celebratory success state that displays a meme image and the exact text: \"Hehehe Good gurl 😚💗\".",
+      "text": "When the user clicks \"yess\", transition to a success view that shows a meme image and displays the exact caption text: \"Hehehe Good gurl 😚💗\".",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2"
         ],
         "quotes": [
-          "When she clicks Yess, show her a meme image telling her \"Hehehe Good gurl 😚💗”."
+          "When she clicks Yess, show her a meme image telling her “Hehehe Good gurl 😚💗”."
         ]
       },
       "acceptanceCriteria": [
-        "Clicking \"yess\" switches the page to a success screen/state.",
-        "The success screen shows a meme image and the caption text exactly \"Hehehe Good gurl 😚💗\".",
-        "The success screen keeps the romantic neon styling consistent with the rest of the page."
+        "Clicking the \"yess\" button switches to a success state (no additional confirmation needed).",
+        "The success state renders a static meme image from the frontend (no backend fetch).",
+        "The success state displays the exact text \"Hehehe Good gurl 😚💗\"."
       ]
     },
     {
       "id": "REQ-6",
-      "text": "Add the required generated static meme image under `frontend/public/assets/generated` and render it directly from the frontend (no backend fetch).",
+      "text": "Provide the required static meme image asset at `frontend/public/assets/generated/valentine-meme.dim_1200x800.png` and ensure the success view renders it directly via a static `/assets/generated/...` path.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2"
         ],
         "quotes": [
-          "When she clicks Yess, show her a meme image..."
+          "show her a meme image"
         ]
       },
       "acceptanceCriteria": [
-        "A static image file exists at `frontend/public/assets/generated/valentine-meme.dim_1200x800.png`.",
-        "The success view renders the image by referencing the static asset path (not via backend calls)."
+        "`frontend/public/assets/generated/valentine-meme.dim_1200x800.png` exists in the project output.",
+        "The success view loads the image via `src=\"/assets/generated/valentine-meme.dim_1200x800.png\"` (or equivalent static path).",
+        "The meme image renders responsively within the viewport (no horizontal scrolling on iPad)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Update the document/page metadata for the Valentine page so it reflects Hridya (e.g., the HTML `<title>` should mention Hridya rather than any other name).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "her name is hridya."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The browser tab title references \"Hridya\" and does not reference a different name.",
+        "The page remains a single React entry point (no new routing required)."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (read-only).",
-    "Do not edit immutable authentication/actor hooks or frontend/src/main.tsx; compose around them if needed.",
-    "Backend must remain a single Motoko actor in backend/main.mo; only add backend logic if strictly required for this UI (not expected)."
+    "Do not modify any files under `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`, or anything in `frontend/src/components/ui` (compose instead of editing).",
+    "Keep all backend logic in a single Motoko actor (`backend/main.mo`) and do not introduce additional backend services.",
+    "Use English for any user-facing text in the build request."
   ],
   "nonGoals": [
-    "Internet Identity login or any authentication flow.",
-    "Persisting accept/decline state to the backend or adding user accounts.",
-    "Adding additional pages, navigation, chat, messaging, or social integrations."
+    "Add Internet Identity authentication or any login flow.",
+    "Add backend persistence, databases, or server-side APIs for this page.",
+    "Add additional pages, navigation, or features beyond the Valentine prompt and success reveal.",
+    "Integrate third-party services (analytics, social sharing, messaging, etc.)."
   ],
   "imageRequirements": {
     "required": [
       "Meme-style romantic image with bright, high-contrast look (valentine-meme.dim_1200x800.png)"
     ],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

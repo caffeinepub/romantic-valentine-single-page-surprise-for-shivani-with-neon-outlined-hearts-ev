@@ -2,8 +2,62 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-the-required-generated-static-meme-image-under-frontend-public-assets-generated-and-render-it-directly-from-the-frontend-no-backend-fetch",
-      "featureTitle": "Add the required generated static meme image under `frontend/public/assets/generated` and render it directly from the frontend (no backend fetch).",
+      "featureId": "feature-update-the-valentine-prompt-copy-to-address-the-girlfriend-by-name-and-keep-the-experience-single-purpose-show-exactly-the-heading-text-hridya-and-the-question-will-you-be-my-valentine-above-exactly-two-choices-labeled-yess-and-i-dont-like-you",
+      "featureTitle": "Update the Valentine prompt copy to address the girlfriend by name and keep the experience single-purpose: show exactly the heading text \"Hridya,\" and the question \"Will you be my Valentine? 💕\" above exactly two choices labeled \"yess\" and \"i dont like you\".",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-i-dont-like-you-button-evade-interaction-so-it-cannot-be-clicked-on-hover-mouse-enter-and-on-attempted-tap-press-pointer-down-touch-start-it-moves-to-a-new-on-screen-position-within-the-viewport-and-avoids-overlapping-the-yess-button-area",
+      "featureTitle": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (mouse enter) and on attempted tap/press (pointer down / touch start), it moves to a new on-screen position within the viewport and avoids overlapping the \"yess\" button area.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-when-the-user-clicks-yess-transition-to-a-success-view-that-shows-a-meme-image-and-displays-the-exact-caption-text-hehehe-good-gurl",
+      "featureTitle": "When the user clicks \"yess\", transition to a success view that shows a meme image and displays the exact caption text: \"Hehehe Good gurl 😚💗\".",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-provide-the-required-static-meme-image-asset-at-frontend-public-assets-generated-valentine-meme-dim-1200x800-png-and-ensure-the-success-view-renders-it-directly-via-a-static-assets-generated-path",
+      "featureTitle": "Provide the required static meme image asset at `frontend/public/assets/generated/valentine-meme.dim_1200x800.png` and ensure the success view renders it directly via a static `/assets/generated/...` path.",
       "files": [],
       "components": [
         "core-infrastructure@1.0.2",
@@ -14,6 +68,24 @@
       ],
       "testIds": [
         "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-document-page-metadata-for-the-valentine-page-so-it-reflects-hridya-e-g-the-html-title-should-mention-hridya-rather-than-any-other-name",
+      "featureTitle": "Update the document/page metadata for the Valentine page so it reflects Hridya (e.g., the HTML `<title>` should mention Hridya rather than any other name).",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
       ],
       "confidence": "high"
     }

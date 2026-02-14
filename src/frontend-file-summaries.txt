@@ -1,8 +1,9 @@
 {
-  "frontend/src/App.tsx": "Main Valentine's Day app component that manages state between the question prompt and success view, rendering the evasive \"i dont like you\" button and \"yess\" button with the neon hearts background, passing yess button ref to evasive hook for safe zone avoidance.",
+  "frontend/src/App.tsx": "Main Valentine's Day app component that manages state between the question prompt (asking Hridya to be a Valentine) and success view, rendering the evasive \"i dont like you\" button and \"yess\" button with the neon hearts background, passing yess button ref to evasive hook for safe zone avoidance.",
   "frontend/src/components/NeonHeartsBackground.tsx": "Canvas-based animated background component that continuously spawns and floats hollow/outlined neon pink and white hearts upward from the bottom of the viewport with pointer/touch interactivity causing repulsion and glow effects on nearby hearts.",
   "frontend/src/components/SuccessMeme.tsx": "Success state component that displays the static meme image from assets/generated with the exact caption \"Hehehe Good gurl 😚💗\" in neon styling.",
   "frontend/src/hooks/useEvasiveButton.ts": "Custom hook that manages the evasive button behavior, calculating safe random positions within the viewport while avoiding both the center area and the yess button's safe zone with padding, ensuring reliable evasion across repeated attempts and accepting nullable RefObject type.",
   "frontend/src/index.css": "Global styles with romantic neon pink/white OKLCH color system, custom neon text and button classes with glow effects, and pulse animation keyframes.",
-  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic pink/white color tokens and system font stack for consistent cross-platform rendering."
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic pink/white color tokens and system font stack for consistent cross-platform rendering.",
+  "frontend/index.html": "HTML entry point with updated page title referencing Hridya for the Valentine surprise page."
 }

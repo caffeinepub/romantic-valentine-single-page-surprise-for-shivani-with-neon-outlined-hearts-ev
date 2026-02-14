@@ -1,19 +1,53 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Build a simple romantic interactive web page to ask Shivani to be the user's valentine, featuring an animated neon-heart live wallpaper background and playful UI interactions that strongly encourage clicking “yess”, then showing a meme image/message on acceptance.",
+  "summary": "Interactive romantic Valentine web page for Hridya with animated neon heart live wallpaper background, playful yes/no interaction, and meme reveal on acceptance; runnable in iPad Chrome.",
   "architectural_notes": [
-    "Implement as a standalone HTML/CSS/JS page compatible with Chrome on iPad."
+    "Implement as static HTML/CSS/JS page intended to run locally in Chrome on iPad (no backend required)."
   ],
-  "known_issues": [],
+  "known_issues": [
+    "Prior deployment attempt did not complete (deployment error reported)."
+  ],
   "isFixRequest": false,
   "imageRequirements": "## Required Images\n- Meme-style romantic image with bright, high-contrast look (valentine-meme.dim_1200x800.png)",
   "existing_features": [
     {
-      "id": "feature-add-the-required-generated-static-meme-image-under-frontend-public-assets-generated-and-render-it-directly-from-the-frontend-no-backend-fetch",
-      "title": "Add the required generated static meme image under `frontend/public/assets/generated` and render it directly from the frontend (no backend fetch).",
+      "id": "feature-update-the-valentine-prompt-copy-to-address-the-girlfriend-by-name-and-keep-the-experience-single-purpose-show-exactly-the-heading-text-hridya-and-the-question-will-you-be-my-valentine-above-exactly-two-choices-labeled-yess-and-i-dont-like-you",
+      "title": "Update the Valentine prompt copy to address the girlfriend by name and keep the experience single-purpose: show exactly the heading text \"Hridya,\" and the question \"Will you be my Valentine? 💕\" above exactly two choices labeled \"yess\" and \"i dont like you\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-i-dont-like-you-button-evade-interaction-so-it-cannot-be-clicked-on-hover-mouse-enter-and-on-attempted-tap-press-pointer-down-touch-start-it-moves-to-a-new-on-screen-position-within-the-viewport-and-avoids-overlapping-the-yess-button-area",
+      "title": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (mouse enter) and on attempted tap/press (pointer down / touch start), it moves to a new on-screen position within the viewport and avoids overlapping the \"yess\" button area.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-yess-transition-to-a-success-view-that-shows-a-meme-image-and-displays-the-exact-caption-text-hehehe-good-gurl",
+      "title": "When the user clicks \"yess\", transition to a success view that shows a meme image and displays the exact caption text: \"Hehehe Good gurl 😚💗\".",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-the-required-static-meme-image-asset-at-frontend-public-assets-generated-valentine-meme-dim-1200x800-png-and-ensure-the-success-view-renders-it-directly-via-a-static-assets-generated-path",
+      "title": "Provide the required static meme image asset at `frontend/public/assets/generated/valentine-meme.dim_1200x800.png` and ensure the success view renders it directly via a static `/assets/generated/...` path.",
       "reqIds": [
         "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-document-page-metadata-for-the-valentine-page-so-it-reflects-hridya-e-g-the-html-title-should-mention-hridya-rather-than-any-other-name",
+      "title": "Update the document/page metadata for the Valentine page so it reflects Hridya (e.g., the HTML `<title>` should mention Hridya rather than any other name).",
+      "reqIds": [
+        "REQ-7"
       ],
       "version": 1
     }
@@ -21,77 +55,47 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Romantic single-purpose valentine proposal page addressing Shivani",
+      "summary": "Create single-page romantic Valentine prompt addressed to Hridya (HTML/CSS/JS; iPad Chrome compatible).",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Animated live wallpaper background: small neon hollow outlined hearts floating upward",
+      "summary": "Animated live wallpaper background: small neon hollow outlined hearts floating upward (pink/white neon theme) with interactive feel.",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-3",
-      "summary": "Two-choice UI: “yess” and “i dont like you” with hover-avoid behavior for the negative option",
+      "summary": "Two options: 'yess' and 'i dont like you'; make the negative option evade cursor hover to prevent clicking.",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-4",
-      "summary": "On clicking “yess”, display a meme image/message: “Hehehe Good gurl 😚💗”",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Pink/white neon romantic theme styling and ensure it runs in Chrome on iPad",
+      "summary": "On clicking 'yess', display a meme image with caption/text: “Hehehe Good gurl 😚💗”.",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-6",
-      "summary": "Create a single-page romantic experience that asks: \"Shivani,\\nWill you be my Valentine?\" and presents exactly two choices labeled \"yess\" and \"i dont like you\".",
-      "reqIds": [
-        "REQ-1"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Implement a live animated full-viewport background of many small neon hollow outlined hearts that continuously float upward from the bottom of the viewport to the top, using a pink-and-white neon palette.",
+      "summary": "Implement/keep a full-viewport animated \"live wallpaper\" background of many small neon hollow outlined hearts that float upward continuously from bottom to top using a pink-and-white neon heart color scheme.",
       "reqIds": [
         "REQ-2"
       ],
       "status": "pending"
     },
     {
-      "id": "AR-8",
-      "summary": "Make the animated hearts background interactive so user input (mouse move on desktop and touch on iPad) visibly affects nearby hearts (e.g., gentle repulsion/drift/glow change) while keeping the upward floating motion.",
+      "id": "AR-7",
+      "summary": "Make the hearts background interactive so pointer movement and touch input visibly affects nearby hearts (e.g., repulsion/drift and/or glow intensity changes), while maintaining the upward floating motion.",
       "reqIds": [
         "REQ-3"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Make the \"i dont like you\" button evade interaction so it cannot be clicked: on hover (desktop) and on attempted tap/press (touch devices), it moves to a new on-screen position that stays within the viewport and avoids overlapping the main \"yess\" area.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "When the user clicks \"yess\", transition to a celebratory success state that displays a meme image and the exact text: \"Hehehe Good gurl 😚💗\".",
-      "reqIds": [
-        "REQ-5"
       ],
       "status": "pending"
     }
   ],
   "gameProjectType": "none",
-  "projectName": "Romantic Valentine single-page surprise for Shivani with neon hearts background, evasive “no” button, and meme reveal",
+  "projectName": "Romantic Valentine single-page surprise for Hridya with interactive neon hearts and evasive 'no' button",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }
